@@ -19,8 +19,8 @@ export interface Issue {
 /**
  * @desc Get weekly issues
  */
-export default function issues(): Issue[] {
-    let issues = ISSUES.map((issue: any) => {
+export default function parseIssues(src: typeof ISSUES): Issue[] {
+    let issues = src.map((issue: any) => {
         let state = issue.draft ? issue.draft : issue.state;
         if (issue.pull_request?.merged_at != null) {
             state = 'merged';
