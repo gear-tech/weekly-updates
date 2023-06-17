@@ -8,7 +8,7 @@ on:
         required: true
         type: text
       title:
-        description: "The title of the thread"
+        description: "The title of the thread:"
         type: text
         default: Gear Weekly Updates (YYYY-MM-DD)
         required: true
