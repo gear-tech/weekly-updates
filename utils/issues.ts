@@ -7,6 +7,7 @@ export interface Issue {
     assignees: string[];
     author: string;
     avatar: string;
+    body: string;
     id: number;
     labels: string[];
     pull: boolean;
@@ -30,6 +31,7 @@ export default function parseIssues(src: typeof ISSUES): Issue[] {
             assignees: issue.assignees.map((assignee: any) => assignee.login),
             author: issue.user.login,
             avatar: issue.user.avatar_url,
+            body: issue.body ? issue.body : '',
             id: Number(issue.html_url.match(/\d+$/)[0]),
             labels: issue.labels.map((label: any) => label.name),
             pull: issue.pull_request !== undefined,
