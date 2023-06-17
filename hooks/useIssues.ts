@@ -1,4 +1,3 @@
-import ISSUES from '@/public/issues.json';
 import parseIssues, { Issue } from "@/utils/issues";
 import getMonday from '@/utils/monday';
 import { useEffect, useState } from 'react';
@@ -7,10 +6,8 @@ const URL = "https://api.github.com/repos/gear-tech/gear/issues";
 
 export function useIssues(): { issues: Issue[], prs: Issue[] } {
     const monday = getMonday();
-    const staticIssues = parseIssues(ISSUES);
-
-    const [issues, setIssues] = useState<Issue[]>(staticIssues.filter((i) => !i.pull));
-    const [prs, setPrs] = useState<Issue[]>(staticIssues.filter((i) => i.pull));
+    const [issues, setIssues] = useState<Issue[]>([]);
+    const [prs, setPrs] = useState<Issue[]>([]);
 
     useEffect(() => {
         fetch(`${URL}?state=all&since=${monday}`)

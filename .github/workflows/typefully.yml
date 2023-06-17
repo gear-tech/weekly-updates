@@ -1,0 +1,30 @@
+name: Generate Typefully Draft
+
+on:
+  workflow_dispatch:
+    inputs:
+      typefully_api_key:
+        description: Your Typefully API KEY, could be found at https://typefully.com/?settings=integrations.
+        required: true
+        type: text
+      title:
+        description: The title of the tread
+        type: text
+        default: Gear Weekly Updates (YYYY-MM-DD)
+        required: false
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+
+      - name: Generate Typefully Draft
+        run: npm i && npm run gen:typefully
