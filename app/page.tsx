@@ -1,6 +1,7 @@
 "use client";
-import getIssues, { Issue } from "@/utils/issues";
+import { Issue } from "@/utils/issues";
 import getMonday from "@/utils/monday";
+import { useIssues } from "@/hooks/useIssues";
 import { useEffect, useState } from "react";
 
 const selectedStyle = "underline";
@@ -9,11 +10,9 @@ const selectedStyle = "underline";
  *   Home page for the weekly updates
  */
 export default function Page() {
-    const allIssues = getIssues();
-    const issues = allIssues.filter(issue => !issue.pull);
-    const prs = allIssues.filter(issue => issue.pull);
     const monday = getMonday();
 
+    const { prs, issues } = useIssues();
     const [pull, setPull] = useState(false);
     const [data, setData] = useState(issues);
 
