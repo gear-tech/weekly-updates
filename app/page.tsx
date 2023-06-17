@@ -25,7 +25,7 @@ export default function Page() {
     }, [pull, issues, prs])
 
     return (
-        <main className="flex min-h-screen flex-col items-center p-12">
+        <main className="flex flex-col items-center p-12 max-w-6xl m-auto">
             <p className="text-2xl">Gear Weekly Updates ({monday})</p>
 
             {/* Weekly updates monitor */}

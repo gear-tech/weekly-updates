@@ -14,10 +14,10 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
+        <html lang="en" className="min-h-screen text-center">
             <body className={inter.className}>{children}</body>
-            <footer className="text-center pb-8 text-sm">
-                <div className="max-w-6xl w-full">
+            <footer className="text-center p-8 text-sm">
+                <div className="w-full">
                     <p>built with ❤️  by <a href="https://github.com/gear-tech">gear-tech</a> team</p>
                 </div>
             </footer>
