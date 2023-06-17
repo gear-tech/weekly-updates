@@ -19,11 +19,11 @@ export default function Page() {
 
     useEffect(() => {
         if (pull) {
-            setData(allIssues);
+            setData(prs);
         } else {
             setData(issues);
         }
-    }, [pull])
+    }, [pull, issues, prs])
 
     return (
         <main className="flex min-h-screen flex-col items-center p-12">
@@ -66,7 +66,7 @@ function Table({ issues }: { issues: Issue[] }) {
             </thead>
             <tbody>
                 {issues.map((issue) => (
-                    <tr className="align-top">
+                    <tr className="align-top" key={issue.id}>
                         <td>{issue.id}</td>
                         <td><a href={issue.url}>{issue.title}</a></td>
                         <td>{issue.author}</td>

@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const isProd = process.env.NODE_ENV === 'production'
+
+const nextConfig = {
+  assetPrefix: isProd ? '/weekly-updates/' : '',
+  images: {
+    unoptimized: true,
+  },
+  output: 'export'
+}
 
 module.exports = nextConfig
