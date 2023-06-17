@@ -4,19 +4,21 @@ on:
   workflow_dispatch:
     inputs:
       typefully_api_key:
-        description: Your Typefully API KEY, could be found at https://typefully.com/?settings=integrations.
+        description: "Your Typefully API KEY:"
         required: true
         type: text
       title:
-        description: The title of the tread
+        description: "The title of the thread"
         type: text
         default: Gear Weekly Updates (YYYY-MM-DD)
-        required: false
+        required: true
 
 jobs:
   deployment:
     runs-on: ubuntu-latest
-
+    env:
+      TYPEFULLY_API_KEY: ${{ inputs.typefully_api_key }}
+      THREAD_TITLE: ${{ inputs.title }}
     steps:
       - uses: actions/checkout@v3
 
