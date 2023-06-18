@@ -1,4 +1,3 @@
-
 /**
  *  Formated issue
  */
@@ -21,7 +20,7 @@ export interface Issue {
  */
 export default function parseIssues(src: any[]): Issue[] {
     let issues = src.map((issue: any) => {
-        let state = issue.draft ? issue.draft : issue.state;
+        let state = issue.draft ? "draft" : issue.state;
         if (issue.pull_request?.merged_at != null) {
             state = 'merged';
         }
