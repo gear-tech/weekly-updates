@@ -1,8 +1,10 @@
+## Gear Weekly Updates
+
 Website for Gear Weekly Updates!
 
 see: https://gear.rs/weekly-updates/
 
-## Generate Typefully Draft
+### Generate Typefully Draft
 
 1. Get your API KEY of typefully.com
 
@@ -20,7 +22,7 @@ Done.
 
 Just open https://typefully.com/ as usual.
 
-## Development
+### Development
 
 ```bash
 yarn && yarn dev
@@ -30,7 +32,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## LICENSE
+### LICENSE
 
 GPL-3.0-or-later
 
