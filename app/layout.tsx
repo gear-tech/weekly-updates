@@ -17,7 +17,7 @@ export default function RootLayout({
         <html lang="en" className="min-h-screen text-center">
             <body className={inter.className}>{children}</body>
             <footer className="text-center p-8 text-sm">
-                <div className="w-full">
+                <div className="max-w-6xl">
                     <p>built with ❤️  by <a href="https://github.com/gear-tech">gear-tech</a> team</p>
                 </div>
             </footer>

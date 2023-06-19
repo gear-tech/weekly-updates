@@ -45,7 +45,7 @@ export default function Page() {
             </div>
 
             {/* Weekly updates table */}
-            <div className="pt-8 w-full">
+            <div className="pt-8 max-w-6xl">
                 <Table issues={data} />
             </div>
         </main>
@@ -54,7 +54,7 @@ export default function Page() {
 
 function Table({ issues }: { issues: Issue[] }) {
     return (
-        <table className="table-auto w-full text-left border-separate border-spacing-4">
+        <table className="table-auto text-left border-separate border-spacing-4">
             <thead>
                 <tr className="text-left">
                     <th>ID</th>
